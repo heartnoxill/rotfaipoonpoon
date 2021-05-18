@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Train_project.Models.Route>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Routes</h1>
+<center>
+    <a href="https://lh3.googleusercontent.com/uu5JXhiSfKcwC6ToF1gtHo_63L-fwldPWyG6IyOi8f__jyCVf0Qkgb80XqKc8XJoKDrJqsjSBG_b8qdYGIS5amqj9wiYSDY1vEGnjNfKxk3-eN0uwRttohHypWyqtLvtRitrFT41rA=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/uu5JXhiSfKcwC6ToF1gtHo_63L-fwldPWyG6IyOi8f__jyCVf0Qkgb80XqKc8XJoKDrJqsjSBG_b8qdYGIS5amqj9wiYSDY1vEGnjNfKxk3-eN0uwRttohHypWyqtLvtRitrFT41rA=w600-h315-p-k" /> </a>
+</center>
+<p>
+    <hr />
+    <a asp-action="Create" class="btn btn-danger btn-lg btn-block">Create New (For Admin)</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Route ID
+            </th>
+            <th>
+                Route Price
+            </th>
+            <th>
+                Departure Station
+            </th>
+            <th>
+                Departure City
+            </th>
+            <th>
+                Departure State
+            </th>
+            <th>
+                Destination Station
+            </th>
+            <th>
+                Destination City
+            </th>
+            <th>
+                Destination State
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.R_id)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.R_price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_station)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination_station)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination_city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination_state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance) km
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.R_id" class="btn btn-primary btn-sm">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.R_id" class="btn btn-success btn-sm">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.R_id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="AdminLogin" asp-action="Login" class="btn btn-secondary">Back</a>
+</div>
+

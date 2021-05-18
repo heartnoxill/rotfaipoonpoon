@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Train_project.Models.Promotion>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Promotions</h1>
+<center>
+    <iframe src="https://giphy.com/embed/Y4t3cJKhVUGtb2YUa5" width="480" height="134" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Hyperkix-sale-hyperkix-crazysale-Y4t3cJKhVUGtb2YUa5"></a></p>
+</center>
+<p>
+    <hr />
+    <a asp-action="Create" class="btn btn-danger btn-lg btn-block">Create New (For Admin)</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Promotion ID
+            </th>
+            <th>
+                Discount Percent (in Decimal)
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                Expiration Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Promotion_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount_percent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expiration_date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Promotion_id" class="btn btn-primary btn-sm">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Promotion_id" class="btn btn-success btn-sm">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Promotion_id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="AdminLogin" asp-action="Login" class="btn btn-secondary">Back</a>
+</div>

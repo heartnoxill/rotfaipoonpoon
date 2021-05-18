@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Train_project.Models.Train>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Trains</h1>
+<center>
+    <a href="https://lh3.googleusercontent.com/YaDdjkSVh60Y-3D1CKedcLqfwBZ-hSaqy8hVjcxFsGg34mC16zrGc98cnug3ss3YO_0Y7LWCv2h9mlojgWBU8zxl7JzgvUS6dRVgr3027HoSYFu-NX1hAkw_6zpjzl7Z_KMCebC8tQ=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/YaDdjkSVh60Y-3D1CKedcLqfwBZ-hSaqy8hVjcxFsGg34mC16zrGc98cnug3ss3YO_0Y7LWCv2h9mlojgWBU8zxl7JzgvUS6dRVgr3027HoSYFu-NX1hAkw_6zpjzl7Z_KMCebC8tQ=w600-h315-p-k" /> </a>
+</center>
+<p>
+    <hr />
+    <a asp-action="Create" class="btn btn-danger btn-lg btn-block">Create New (For Admin)</a>
+</p>
+
+<h3>Train ID: 1</h3>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+</div>
+<h3>Train ID: 2</h3>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+</div>
+<h3>Train ID: 3</h3>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Train ID
+            </th>
+            <th>
+                Train Age
+            </th>
+            <th>
+                Train Max Speed
+            </th>
+            <th>
+                Train Status
+            </th>
+            <th>
+                Max Capacity
+            </th>
+            <th>
+                Seats Filled
+            </th>
+            <th>
+                Seats Remain
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Platform)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TR_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TR_age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Maxspeed) km/hr
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Max_cap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seats_filled)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seats_remain)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Platform)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TR_id" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.TR_id" class="btn btn-success btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.TR_id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="AdminLogin" asp-action="Login" class="btn btn-secondary">Back</a>
+</div>

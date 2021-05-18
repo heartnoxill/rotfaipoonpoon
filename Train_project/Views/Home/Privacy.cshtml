@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Developers";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>CPE332 Database and ERP Systems Final Project</p>
+<li>
+    Pattarapon Buathong 62070504012
+</li>
+<li>
+    Suchada Panyawiraphat 62070504016
+</li>
+<li>
+    Pawornrat Supavit Pranayanuntana 62070504030
+</li>
+
+<hr />
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Project Overview
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <p>
+                    We are working for a train station called RotFaiPoonPoon. Our project aims to aid customers in booking tickets online for train travel. With this, we will have to create a website for booking the tickets and create a database to store this information. Note that customers will be able to, add, look up, change and/or cancel their ticket bookings through the webpage which, in turn, will create, read, update and/or delete the information in the database correspondingly. The webpage will provide simple instructions and a user-friendly interface where customers input into a query for their train ticket, go through a confirmation and transaction page, and receive an online documentation of their ticket.
+                </p>
+                <p>
+                    Last week for our consultation, we were advised to make a few changes to the concept and details of our project. For instance, the main idea will be for booking tickets for highspeed trains instead of regular trains. Details modified include using another expression for calculating the total price and add in user contact information. Our progress so far consists of the finalized ER model both created from Microsoft SQL Server and and .NET MVC. Additionally, the designs for the database, WebApp and Interface are now finalized but are yet to be fully implemented. Finally, the webpage was initiated where database information and query can be displayed on the WebApp and both users and admins are now able to CRUD information in the database via this WebApp. We will continue to develop and test how the WebApp and database interact in order to achieve the outcomes we want. We still have to update on putting restrictions on user CRUD since realistically, they should not be able to modify any information on the database except their own.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Goals/Objectives for next week
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <p>
+                    <li>
+                        Finish developing the webpage.
+                    </li>
+                    <li>
+                        Test both the webpage and database all over again to confirm everything follows our project’s updated scope.
+                    </li>
+                    <li>
+                        Test for any bugs and fix those bugs.
+                    </li>
+                    <li>
+                        Complete and finalize the project.
+                    </li>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Problems
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <li>
+                    The high speed train station company we work for does not provide booking tickets online and lacks an efficient database that keeps track of booked tickets and their customers information.
+                </li>
+                <li>
+                    People are not used to booking train tickets online.
+                </li>
+                <li>
+                    People may believe that booking online will restrict their options available compared to that of booking offline.
+                </li>
+                <li>
+                    People may believe that booking online will prevent them from modifying or cancelling their booking once the transaction is finalized and complete.
+                </li>
+
+            </div>
+        </div>
+    </div>
+</div>

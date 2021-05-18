@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Train_project.Models.Class>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Train Classes</h1>
+
+<center>
+    <a href="https://lh3.googleusercontent.com/RnrLq1GwN7jbCLsKdLnKRWrOtRDf9ZqcRzsdoiF0onXXb587dB8M-68yTHuOAS9FfVfdC1fWHABILSwUJIej8OFrfboU4c_b9KwWRlx-Q7eqMYHLG43S-KQYS1ZxcPFCf6ceULeywQ=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/RnrLq1GwN7jbCLsKdLnKRWrOtRDf9ZqcRzsdoiF0onXXb587dB8M-68yTHuOAS9FfVfdC1fWHABILSwUJIej8OFrfboU4c_b9KwWRlx-Q7eqMYHLG43S-KQYS1ZxcPFCf6ceULeywQ=w600-h315-p-k" /> </a>
+</center>
+
+<p>
+    <hr />
+    <a asp-action="Create" class="btn btn-danger btn-lg btn-block">Create New (For Admin)</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Class ID
+            </th>
+            <th>
+                Class Name
+            </th>
+            <th>
+                Class Price
+            </th>
+            <th>
+                Aisle Number
+            </th>
+            <th>
+                Seat Number
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.C_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Classname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aisle_no)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seat_no)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.C_id" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.C_id" class="btn btn-success btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.C_id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="AdminLogin" asp-action="Login" class="btn btn-secondary">Back</a>
+</div>

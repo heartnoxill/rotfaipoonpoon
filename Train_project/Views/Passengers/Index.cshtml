@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Train_project.Models.Passenger>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Passengers</h1>
+
+<center>
+    <iframe src="https://giphy.com/embed/I2najEpakfJqU" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/metro-ndavid42-noemimondik-I2najEpakfJqU"></a></p>
+</center>
+
+<p>
+    <hr />
+    <a asp-action="Create" class="btn btn-primary btn-lg btn-block">Sign Up</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Contract
+            </th>
+            <th>
+                Date Of Birth
+            </th>
+            <th>
+                Prefix
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.P_fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.P_lname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.P_contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.P_DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prefix)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.P_id" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.P_id" class="btn btn-success btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.P_id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

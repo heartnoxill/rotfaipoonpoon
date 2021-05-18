@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Train_project.Models.Schedule>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Schedule</h1>
+<center>
+    <a href="https://lh3.googleusercontent.com/oDMrJoB2bkSKC3KzRUeESmudthJJDF1y3X6a8jGLijIbIbfLK6K29Zzk4dLi4vCOFujoCbS_S9dYBy1SVgqL5hYAjAxy_ZzSNSSorG4sJ7rRwHJHqzd-DAVQFSy-0Ql_SIioUpaqew=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/oDMrJoB2bkSKC3KzRUeESmudthJJDF1y3X6a8jGLijIbIbfLK6K29Zzk4dLi4vCOFujoCbS_S9dYBy1SVgqL5hYAjAxy_ZzSNSSorG4sJ7rRwHJHqzd-DAVQFSy-0Ql_SIioUpaqew=w600-h315-p-k" /> </a>
+</center>
+<p>
+    <hr />
+    <a asp-action="Create" class="btn btn-danger btn-lg btn-block">Create New (For Admin)</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Departure_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departure_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estimated_ToA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Route)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckIn_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estimated_ToA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Route.R_id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Q_id" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Q_id" class="btn btn-success btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Q_id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="AdminLogin" asp-action="Login" class="btn btn-secondary">Back</a>
+</div>

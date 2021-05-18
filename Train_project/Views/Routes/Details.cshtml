@@ -1,0 +1,67 @@
+﻿@model Train_project.Models.Route
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.R_price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.R_price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Departure_station)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Departure_station)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Departure_city)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Departure_city)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Departure_state)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Departure_state)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination_station)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Destination_station)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination_city)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Destination_city)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination_state)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Destination_state)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Distance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Distance)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.R_id" class="btn btn-success">Edit</a> 
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

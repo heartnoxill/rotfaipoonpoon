@@ -1,0 +1,80 @@
+﻿@model Train_project.Models.Ticket
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Date Issued
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_issued)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Passenger)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Passenger.P_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Train)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Train.TR_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Class.C_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Route)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Route.R_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Schedule.Q_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Promotion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Promotion.Promotion_id)
+        </dd>
+    </dl>
+</div>
+
+
+<center>
+    <div class="card" style="width: 35rem;">
+        <div class="card-header bg-warning text-dark">
+            <h3>Train Ticket: RotFai</h3>
+        </div>
+        <div class="card-body bg-light text-dark">
+            <h4 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(model => model.Passenger.Prefix) @Html.DisplayFor(model => model.Passenger.P_fname) @Html.DisplayFor(model => model.Passenger.P_lname)</h4>
+            <p class="card-text"><b>Departure Station:</b> @Html.DisplayFor(model => model.Route.Departure_station), @Html.DisplayFor(model => model.Route.Departure_city), @Html.DisplayFor(model => model.Route.Departure_state)</p>
+            <p class="card-text"><b>Destination Station:</b> @Html.DisplayFor(model => model.Route.Destination_station), @Html.DisplayFor(model => model.Route.Destination_city), @Html.DisplayFor(model => model.Route.Destination_state)</p>
+            <p class="card-text"><b>Platform:</b> @Html.DisplayFor(model => model.Train.Platform) | <b>Class</b> @Html.DisplayFor(model => model.Class.Classname) | <b>Aisle:</b> @Html.DisplayFor(model => model.Class.Aisle_no) | <b>Seat:</b> @Html.DisplayFor(model => model.Class.Seat_no)</p>
+            <p class="card-text"><b>Check-in Time:</b> @Html.DisplayFor(model => model.Schedule.Departure_date) @Html.DisplayFor(model => model.Schedule.CheckIn_time)</p>
+            <p class="card-text"><b>Departure Time:</b> @Html.DisplayFor(model => model.Schedule.Departure_date) @Html.DisplayFor(model => model.Schedule.Departure_time)</p>
+            <p class="card-text"><b>Estimated Time of Arrival:</b> @Html.DisplayFor(model => model.Schedule.Estimated_ToA)</p>
+        </div>
+    </div>
+</center>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.T_id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,232 @@
+﻿@model IEnumerable<Train_project.Models.Ticket>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Book a Ticket</h1>
+
+<h4>Book your RotFai train tickets today by choosing from over 30 U.S. train routes and 500 destinations in North America.</h4>
+
+<div class="alert alert-primary" role="alert">
+    5% Discount for every routes, book your ticket now!
+</div>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Route #1 NYC to Boston
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <center>
+                    <h2>Route Price: $300</h2>
+                    <a href="https://lh3.googleusercontent.com/05MJ_B8QEZBvXWqzAvleObmx_FrvBSF9lwHS6HX3a-WTtqYf6OgFpgjbfaaD02kNcQ0HBmt7z4mfmGbdc52C4LbCcdhlCSc_exjXKK4jP-CLPhZEDuCoPg91RFob47UHfGpgtPsKCA=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/05MJ_B8QEZBvXWqzAvleObmx_FrvBSF9lwHS6HX3a-WTtqYf6OgFpgjbfaaD02kNcQ0HBmt7z4mfmGbdc52C4LbCcdhlCSc_exjXKK4jP-CLPhZEDuCoPg91RFob47UHfGpgtPsKCA=w600-h315-p-k" /> </a>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Route #2 Chicago to NYC
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <center>
+                    <h2>Route Price: $1000</h2>
+                    <a href="https://lh3.googleusercontent.com/p8JIoN0yKJNMkA2yR_BIlnghYRHI09xz65tf5w1GB8TV0I_MJkP1i1YeaCof5F4_ZFVjEUX5L6r_ke4os0MtulYRNn2mE2Rqus6ciNAb5pdLfTWuNFz9kwnqe4oUtMXzZJYTcgBVjg=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/p8JIoN0yKJNMkA2yR_BIlnghYRHI09xz65tf5w1GB8TV0I_MJkP1i1YeaCof5F4_ZFVjEUX5L6r_ke4os0MtulYRNn2mE2Rqus6ciNAb5pdLfTWuNFz9kwnqe4oUtMXzZJYTcgBVjg=w600-h315-p-k" /> </a>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Route #3 San Francisco to Sacramento
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <center>
+                    <h2>Route Price: $100</h2>
+                    <a href="https://lh3.googleusercontent.com/LDYgEb_l0iuwlvOe-La2GcS3_g-MGmrp05n4fKexyaULngE4js8IQhoi-G4Zq1ZFNXhEsXAMxmd4lYLPk2YDbvJLQ9VqxnXrBhMK56v0oMY960GQaPScefIbFaVaqvZS4zAjKfElyg=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/LDYgEb_l0iuwlvOe-La2GcS3_g-MGmrp05n4fKexyaULngE4js8IQhoi-G4Zq1ZFNXhEsXAMxmd4lYLPk2YDbvJLQ9VqxnXrBhMK56v0oMY960GQaPScefIbFaVaqvZS4zAjKfElyg=w600-h315-p-k" /> </a>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Class Price
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    <center>
+                        <h2>First Class: $80</h2>
+                        <h2>Business Class: $50</h2>
+                        <h2>Economy Class: $25</h2>
+                    </center>
+                </div>
+            </div>
+        </div>*@
+</div>
+<hr />
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Class Price
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Class Price</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <h2>First Class: $80</h2>
+                    <h2>Business Class: $50</h2>
+                    <h2>Economy Class: $25</h2>
+                </center>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+    Train Info
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Train Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <h2>Train #1</h2>
+                    <h4>Max Speed: 200km/hr, Remaining Seats: 100</h4>
+                    <h2>Train #2</h2>
+                    <h4>Max Speed: 150km/hr, Remaining Seats: 50</h4>
+                    <h2>Train #3</h2>
+                    <h4>Max Speed: 180km/hr, Remaining Seats: 150</h4>
+                </center>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<hr />
+<a asp-action="Create" class="btn btn-primary btn-lg btn-block">Book a ticket now</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Date Issue
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passenger)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Route)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Promotion)
+            </th>
+            <th>
+                Discount Price
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            float Discount_price = ((item.Route.R_price + item.Class.Class_price) * item.Promotion.Discount_percent);
+            float Total_Price = (item.Route.R_price + item.Class.Class_price) - Discount_price;
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_issued)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passenger.P_fname) @Html.DisplayFor(modelItem => item.Passenger.P_lname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Train.TR_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class.Classname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Route.R_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule.Q_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Promotion.Discount_percent)
+                </td>
+                <td>
+                    $@Discount_price
+                </td>
+                <td>
+                    $@Total_Price
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.T_id" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.T_id" class="btn btn-success btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.T_id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

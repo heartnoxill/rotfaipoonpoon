@@ -1,0 +1,84 @@
+﻿@model Train_project.Models.Ticket
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="date_issued" class="control-label">Date Issued</label>
+                <input asp-for="date_issued" class="form-control" />
+                <span asp-validation-for="date_issued" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerP_id" class="control-label">Passenger ID</label>
+                <select asp-for="PassengerP_id" class="form-control" asp-items="ViewBag.PassengerP_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainTR_id" class="control-label">Train ID</label>
+                <select asp-for="TrainTR_id" class="form-control" asp-items="ViewBag.TrainTR_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassC_id" class="control-label">Train Class ID</label>
+                <select asp-for="ClassC_id" class="form-control" asp-items="ViewBag.ClassC_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RouteR_id" class="control-label">Route ID</label>
+                <select asp-for="RouteR_id" class="form-control" asp-items="ViewBag.RouteR_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScheduleQ_id" class="control-label">Schedule ID</label>
+                <select asp-for="ScheduleQ_id" class="form-control" asp-items="ViewBag.ScheduleQ_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromotionPromotion_id" class="control-label">Promotion ID</label>
+                <select asp-for="PromotionPromotion_id" class="form-control" asp-items="ViewBag.PromotionPromotion_id"></select>
+            </div>
+            @*<div class="form-group">
+            <input type="submit" value="Buy a Ticket" class="btn btn-primary" />
+        </div>*@
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Buy a Ticket
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Buy Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                Are you sure you want to confirm?
+                            </center>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" value="Buy a Ticket" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to Ticket Page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
