@@ -6,7 +6,9 @@ Database project (KMUTT CPE332) using ASP.NET and Microsoft SQL Server
 <br />
 Project Tour Video on YouTube: https://youtu.be/XQAIsSpFb1o
 <br />
+
 How to run the project (code)
+
 - Download the Train_project.rar and extract the file at your desired path (e.g., Desktop)
 - Open Train_project.sln with Visual Studio
 - Delete the Migration folder
