@@ -10,11 +10,11 @@ How to run the project (code)
 1.	Download the Train_project.rar and extract the file at your desired path (e.g., Desktop)
 2.	Open Train_project.sln with Visual Studio
 3.	Delete the Migration folder
-4.	Go to Tools  NuGet Package Manager  Package manager console.
+4.	Go to Tools --> NuGet Package Manager  Package manager console.
 5.	Run: add-migration InitialCreate (or any desired name)
 6.	After that, run: update-database
 7.	Go to SQL server and check if the database has been built (The name is Train_database)
-8.	Go to Databases  Train_database  Tables  dbo.AdminLogins. Then, query the username and password for admin as you desired (for example, username = admin, password = admin)
+8.	Go to Databases --> Train_database --> Tables --> dbo.AdminLogins. Then, query the username and password for admin as you desired (for example, username = admin, password = admin)
 9.	Run the project, it will be run on set browser.
 10.	Scroll down to the bottom of the first page, you will see the “Developer” and “Admin” hyperlinks, click “Admin” first.
 11.	Login with the username and password you set.
